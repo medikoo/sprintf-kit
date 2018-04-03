@@ -8,7 +8,9 @@
 
 ## sprintf parser and basic formatter
 
-Provides full [printf format](https://en.wikipedia.org/wiki/Printf_format_string) [parser](#parser), [basic (ECMAScript level) modifier resolvers](#preconfigured-modifiers), and [format function generator](#format-function-generator).
+* Full [printf format](https://en.wikipedia.org/wiki/Printf_format_string) [parser](#parser)
+* Basic (ECMAScript level) modifier [resolvers](#preconfigured-modifiers)
+* Format function (generator](#format-function-generator).
 
 ### Installation
 

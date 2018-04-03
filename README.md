@@ -97,7 +97,7 @@ Every modifier is exception safe, in case of approaching invalid value, adequate
 npm test
 ```
 
-[nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/sprintf-kit/branches/master/badge.svg
+[nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/sprintf-kit/branches/master/shields_badge.svg
 [nix-build-url]: https://semaphoreci.com/medikoo-org/sprintf-kit
 [win-build-image]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61?svg=true
 [win-build-url]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61

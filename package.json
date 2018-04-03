@@ -1,0 +1,25 @@
+{
+  "name": "sprintf-kit",
+  "version": "1.0.0",
+  "description": "sprintf parser and basic formatter",
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+  "keywords": ["printf", "sprintf", "log", "format", "string"],
+  "repository": { "type": "git", "url": "git://github.com/medikoo/sprintf-kit.git" },
+  "dependencies": { "es5-ext": "^0.10.42" },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-medikoo-es5": "^1.4.9",
+    "istanbul": "^0.4.5",
+    "tape": "^4.9",
+    "tape-index": "2"
+  },
+  "eslintConfig": { "extends": "medikoo-es5", "root": true },
+  "scripts": {
+    "coverage": "tape-index && istanbul cover test.index.js",
+    "check-coverage":
+      "npm run coverage && istanbul check-coverage --statements 100 --function 100 --branches 100 --lines 100",
+    "lint": "eslint --ignore-path=.gitignore .",
+    "test": "tape-index && node test.index.js"
+  },
+  "license": "ISC"
+}

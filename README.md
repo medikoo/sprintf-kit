@@ -1,6 +1,6 @@
-[![Build status][semaphore-image]][semaphore-url]
-[![Windows status][appveyor-image]][appveyor-url]
-[![Tests coverage][codecov-image]][codecov-url]
+[![*nix build status][nix-build-image]][nix-build-url]
+[![Windows build status][win-build-image]][win-build-url]
+[![Tests coverage][cov-image]][cov-url]
 ![Transpilation status][transpilation-image]
 [![npm version][npm-image]][npm-url]
 
@@ -97,12 +97,12 @@ Every modifier is exception safe, in case of approaching invalid value, adequate
 npm test
 ```
 
-[semaphore-image]: https://semaphoreci.com/api/v1/medikoo-org/sprintf-kit/branches/master/badge.svg
-[semaphore-url]: https://semaphoreci.com/medikoo-org/sprintf-kit
-[appveyor-image]: https://img.shields.io/appveyor/ci/medikoo/sprintf-kit.svg
-[appveyor-url]: https://ci.appveyor.com/project/medikoo/sprintf-kit
-[codecov-image]: https://img.shields.io/codecov/c/github/medikoo/sprintf-kit.svg
-[codecov-url]: https://codecov.io/gh/medikoo/sprintf-kit
+[nix-image]: https://semaphoreci.com/api/v1/medikoo-org/sprintf-kit/branches/master/badge.svg
+[nix-url]: https://semaphoreci.com/medikoo-org/sprintf-kit
+[win-image]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61?svg=true
+[win-url]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61
+[cov-image]: https://img.shields.io/codecov/c/github/medikoo/sprintf-kit.svg
+[cov-url]: https://codecov.io/gh/medikoo/sprintf-kit
 [transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
 [npm-image]: https://img.shields.io/npm/v/sprintf-kit.svg
 [npm-url]: https://www.npmjs.com/package/sprintf-kit

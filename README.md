@@ -8,7 +8,7 @@
 
 ## sprintf parser and basic formatter
 
-Provides full [printf format](https://en.wikipedia.org/wiki/Printf_format_string) parser, basic (ECMAScript level) modifiers resolvers, and format fucntion generator.
+Provides full [printf format](https://en.wikipedia.org/wiki/Printf_format_string) [parser](#parser), [basic (ECMAScript level) modifier resolvers](#preconfigured-modifiers), and [format function generator](#format-function-generator).
 
 ### Installation
 
@@ -69,10 +69,10 @@ format("Some %s with %d count %x boo", "foo", 12, "ignored"); // Some foo with 1
 format = require("sprintf-kit")({
   d: require("sprintf-kit/modifiers/d"),
   s: require("sprintf-kit/modifiers/s"),
-  rest: (args) => " " + args.join(" ")
+  rest: args => " " + args.join(" ")
 });
 
-format("Some %s with %d count", "foo", 12, "rest", "args); // Some foo with 12 count rest args
+format("Some %s with %d count", "foo", 12, "rest", "args"); // Some foo with 12 count rest args
 ```
 
 #### Preconfigured modifiers

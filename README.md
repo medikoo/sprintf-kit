@@ -97,10 +97,10 @@ Every modifier is exception safe, in case of approaching invalid value, adequate
 npm test
 ```
 
-[nix-image]: https://semaphoreci.com/api/v1/medikoo-org/sprintf-kit/branches/master/badge.svg
-[nix-url]: https://semaphoreci.com/medikoo-org/sprintf-kit
-[win-image]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61?svg=true
-[win-url]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61
+[nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/sprintf-kit/branches/master/badge.svg
+[nix-build-url]: https://semaphoreci.com/medikoo-org/sprintf-kit
+[win-build-image]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61?svg=true
+[win-build-url]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61
 [cov-image]: https://img.shields.io/codecov/c/github/medikoo/sprintf-kit.svg
 [cov-url]: https://codecov.io/gh/medikoo/sprintf-kit
 [transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg

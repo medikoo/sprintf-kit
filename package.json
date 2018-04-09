@@ -7,6 +7,7 @@
   "repository": { "type": "git", "url": "git://github.com/medikoo/sprintf-kit.git" },
   "dependencies": { "es5-ext": "^0.10.42" },
   "devDependencies": {
+    "browserstack-tape-runner": "2",
     "eslint": "^4.19.1",
     "eslint-config-medikoo-es5": "^1.4.9",
     "istanbul": "^0.4.5",
@@ -19,7 +20,13 @@
     "check-coverage":
       "npm run coverage && istanbul check-coverage --statements 100 --function 100 --branches 100 --lines 100",
     "lint": "eslint --ignore-path=.gitignore .",
-    "test": "tape-index && node test.index.js"
+    "test": "tape-index && node test.index.js",
+    "test-browsers": "tape-index && browserstack-tape-runner test.index.js"
+  },
+  "browserstack": {
+    "browsers": [
+      "chrome_latest", "firefox_latest", "safari_latest", "opera_latest", "ie_11", "edge_latest"
+    ]
   },
   "license": "ISC"
 }

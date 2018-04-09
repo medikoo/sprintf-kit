@@ -25,7 +25,8 @@
   },
   "browserstack": {
     "browsers": [
-      "chrome_latest", "firefox_latest", "safari_latest", "opera_latest", "ie_11", "edge_latest"
+      "chrome_current", "firefox_current", "safari_current", "opera_current", "ie_11",
+      "edge_current"
     ]
   },
   "license": "ISC"

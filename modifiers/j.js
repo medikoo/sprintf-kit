@@ -13,7 +13,7 @@ var CIRCULAR_JSON_ERROR_MESSAGE = (function () {
 
 module.exports = function (value/*, placeholder, argIndex, args*/) {
 	try {
-		return JSON.stringify(value, null, "  ");
+		return JSON.stringify(value, null, 2);
 	} catch (e) {
 		if (e.message === CIRCULAR_JSON_ERROR_MESSAGE) return "[Circular JSON]";
 		return "<Non-serializable (to JSON) value>";

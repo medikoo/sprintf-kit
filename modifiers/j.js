@@ -16,6 +16,6 @@ module.exports = function (value/*, placeholder, argIndex, args*/) {
 		return JSON.stringify(value, null, "  ");
 	} catch (e) {
 		if (e.message === CIRCULAR_JSON_ERROR_MESSAGE) return "[Circular JSON]";
-		return "[Non-serializable (to JSON) value]";
+		return "<Non-serializable (to JSON) value>";
 	}
 };

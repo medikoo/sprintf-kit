@@ -6,6 +6,6 @@ module.exports = function (value/*, placeholder, argIndex, args*/) {
 	try {
 		return String(isNaN(value) ? parseInt(value, 10) : toInteger(value));
 	} catch (e) {
-		return "[Non-coercible (to integer) value]";
+		return "<Non-coercible (to integer) value>";
 	}
 };

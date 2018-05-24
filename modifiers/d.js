@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function (value/*, placeholder, formatData*/) {
+module.exports = function (value/*, placeholder, argIndex, args*/) {
 	try {
 		return String(Number(value));
 	} catch (e) {

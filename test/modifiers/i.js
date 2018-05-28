@@ -12,7 +12,7 @@ test("Should resolve", function (t) {
 	t.equal(modifier("32.14hg"), "32", "Integer representation for string numeric value");
 	t.equal(modifier(Infinity), "Infinity", "Infinity for infinity");
 	t.equal(
-		modifier(Object.create(null))[0], "[", "meaningful error string for non-corcible value"
+		modifier(Object.create(null))[0], "<", "meaningful error string for non-corcible value"
 	);
 	t.end();
 });

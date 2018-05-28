@@ -5,7 +5,7 @@
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": ["printf", "sprintf", "log", "format", "string"],
   "repository": { "type": "git", "url": "git://github.com/medikoo/sprintf-kit.git" },
-  "dependencies": { "es5-ext": "^0.10.42" },
+  "dependencies": { "es5-ext": "^0.10.43" },
   "devDependencies": {
     "browserstack-tape-runner": "2",
     "eslint": "^4.19.1",

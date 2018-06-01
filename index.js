@@ -1,6 +1,7 @@
 "use strict";
 
-var ensureObject        = require("es5-ext/object/valid-object")
+var aFrom               = require("es5-ext/array/from")
+  , ensureObject        = require("es5-ext/object/valid-object")
   , objForEach          = require("es5-ext/object/for-each")
   , ensurePlainFunction = require("es5-ext/object/ensure-plain-function")
   , typeChars           = require("./lib/type-chars")
@@ -17,6 +18,9 @@ module.exports = function (modifiers) {
 	});
 
 	return function (format/*, ...params*/) {
+		if (typeof format !== "string") {
+			return modifiers.rest ? modifiers.rest(aFrom(arguments)) : "";
+		}
 		var data = parse(format);
 		var placeholders = data.placeholders;
 		var isParameterIndexingValid = data.isParameterIndexingValid;

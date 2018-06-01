@@ -26,12 +26,13 @@ test("Should", function (t) {
 			"foo [invalid placeholder parameters] [invalid placeholder parameters]",
 			"Invalid parameters setup"
 		);
+		t.equal(resolve(12, 13), "", "Non-string first argument without rest");
 
 		resolve = getResolver({
 			d: modifierD,
 			// eslint-disable-next-line id-length
 			s: modifierS,
-			rest: function (args, data) { return " " + args.join("-"); }
+			rest: function (args, data) { return (data ? " " : "") + args.join("-"); }
 		});
 
 		t.equal(
@@ -43,6 +44,7 @@ test("Should", function (t) {
 			"Arguments overflow with rest handling and width shift"
 		);
 		t.equal(resolve("foo %x", "elo"), "foo %x", "Placeholder content on unknown type");
+		t.equal(resolve(12, 13), "12-13", "Non-string first argument with rest");
 		t.end();
 	});
 	t.throws(

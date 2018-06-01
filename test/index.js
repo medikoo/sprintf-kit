@@ -31,9 +31,7 @@ test("Should", function (t) {
 			d: modifierD,
 			// eslint-disable-next-line id-length
 			s: modifierS,
-			rest: function (args) {
-				return " " + args.join("-");
-			}
+			rest: function (args, data) { return " " + args.join("-"); }
 		});
 
 		t.equal(
@@ -48,11 +46,7 @@ test("Should", function (t) {
 		t.end();
 	});
 	t.throws(
-		function () {
-			getResolver({ foo: modifierD });
-		},
-		TypeError,
-		"Reject invalid modifiers map"
+		function () { getResolver({ foo: modifierD }); }, TypeError, "Reject invalid modifiers map"
 	);
 
 	t.end();

@@ -1,3 +1,12 @@
 "use strict";
 
-module.exports = require("es5-ext/safe-to-string");
+var isCallable = require("es5-ext/object/is-callable");
+
+module.exports = function (value) {
+	try {
+		if (value && isCallable(value.toString)) return value.toString();
+		return String(value);
+	} catch (e) {
+		return "<invalid>";
+	}
+};

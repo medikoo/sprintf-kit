@@ -1,9 +1,6 @@
 "use strict";
 
 module.exports = function (value/*, placeholder, argIndex, args*/) {
-	try {
-		return String(isNaN(value) ? parseFloat(value) : Number(value));
-	} catch (e) {
-		return "<Non-coercible to float value>";
-	}
+	try { return String(isNaN(value) ? parseFloat(value) : Number(value)); }
+	catch (e) { return "<Non-coercible to float value>"; }
 };

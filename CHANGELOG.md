@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/medikoo/sprintf-kit/compare/v1.2.1...v1.3.0) (2018-06-05)
+
+
+### Bug Fixes
+
+* fix handling of non JSON serializable values ([12543a4](https://github.com/medikoo/sprintf-kit/commit/12543a4))
+
+
+### Features
+
+* more consise invalid value tokens ([ad92ddd](https://github.com/medikoo/sprintf-kit/commit/ad92ddd))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/medikoo/sprintf-kit/compare/v1.2.0...v1.2.1) (2018-06-01)
 

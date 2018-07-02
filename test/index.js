@@ -9,6 +9,7 @@ test("Should", function (t) {
 	t.test("Resolve", function (t) {
 		// eslint-disable-next-line id-length
 		var resolve = getResolver({ d: modifierD, s: modifierS });
+		t.equal(resolve("foo raz", "marko"), "foo raz", "No placeholders");
 		t.equal(resolve("foo %s", "marko"), "foo marko", "Single placeholder");
 		t.equal(resolve("foo %s %d", "marko", 12), "foo marko 12", "Two placeholders");
 		t.equal(
@@ -47,6 +48,10 @@ test("Should", function (t) {
 		t.equal(resolve(12, 13), "12-13", "Non-string first argument with rest");
 		t.end();
 	});
+	var resolve = getResolver({ d: modifierD, literal: function (str) { return str + "foo"; } });
+	t.equal(resolve("mar %d ko", 12), "mar foo12 kofoo", "Support 'literal' modifier");
+	t.equal(resolve("marlo"), "marlofoo", "Support 'literal' modifier with no placeholder");
+
 	t.throws(
 		function () { getResolver({ foo: modifierD }); }, TypeError, "Reject invalid modifiers map"
 	);

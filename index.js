@@ -4,14 +4,17 @@ var aFrom               = require("es5-ext/array/from")
   , ensureObject        = require("es5-ext/object/valid-object")
   , objForEach          = require("es5-ext/object/for-each")
   , ensurePlainFunction = require("es5-ext/object/ensure-plain-function")
+  , primitiveSet        = require("es5-ext/object/primitive-set")
   , typeChars           = require("./lib/type-chars")
   , parse               = require("./parse");
 
 var slice = Array.prototype.slice;
 
+var customTypes = primitiveSet("rest");
+
 module.exports = function (modifiers) {
 	objForEach(ensureObject(modifiers), function (value, type) {
-		if (!hasOwnProperty.call(typeChars, type) && type !== "rest") {
+		if (!hasOwnProperty.call(typeChars, type) && !customTypes[type]) {
 			throw new TypeError("Invalid modifier type: " + type);
 		}
 		ensurePlainFunction(value);

@@ -88,6 +88,38 @@ format = require("sprintf-kit")({
 });
 ```
 
+#### Resolver generator
+
+Resolver returns resolved data in form of tokens, which maybe helpful if additional programmatical processing is needed
+
+```javascript
+// Configure format function that resolves 's' and 'd' modifiers
+let resolve = require("sprintf-kit/get-resolver")({
+  d: require("sprintf-kit/modifiers/d"),
+  s: require("sprintf-kit/modifiers/s")
+});
+
+resolve("Some %s with %d count %x boo", "foo", 12, "ignored");
+// {
+//   literals: ["Some ", " with ", " count ", " boo"],
+//   substitutions: ["foo", "12", "%x"],
+//   rest: null
+// }
+
+resolve = require("sprintf-kit/get-resolver")({
+  d: require("sprintf-kit/modifiers/d"),
+  s: require("sprintf-kit/modifiers/s"),
+  rest: args => " " + args.join(" ")
+});
+
+resolve("Some %s with %d count", "foo", 12, "rest", "args");
+// {
+//   literals: ["Some ", " with ", " count"],
+//   substitutions: ["foo", "12"],
+//   rest: " rest args"
+// }
+```
+
 #### Preconfigured modifiers
 
 Currently just basic modifiers are configured in (PR's welcome to extend this support).

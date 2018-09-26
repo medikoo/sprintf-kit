@@ -15,12 +15,12 @@
     "url": "git://github.com/medikoo/sprintf-kit.git"
   },
   "dependencies": {
-    "es5-ext": "^0.10.45"
+    "es5-ext": "^0.10.46"
   },
   "devDependencies": {
     "browserstack-tape-runner": "2",
-    "eslint": "^5.2",
-    "eslint-config-medikoo-es5": "^1.5",
+    "eslint": "^5.6",
+    "eslint-config-medikoo-es5": "^1.7.1",
     "istanbul": "^0.4.5",
     "tape": "^4.9.1",
     "tape-index": "2"

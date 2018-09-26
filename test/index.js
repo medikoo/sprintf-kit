@@ -5,28 +5,12 @@ var test        = require("tape")
   , modifierS   = require("../modifiers/s")
   , getResolver = require("../");
 
-test("Should", function (t) {
-	t.test("Resolve", function (t) {
+test("(main)", function (t) {
+	t.test("Should resolve", function (t) {
 		// eslint-disable-next-line id-length
 		var resolve = getResolver({ d: modifierD, s: modifierS });
 		t.equal(resolve("foo raz", "marko"), "foo raz", "No placeholders");
-		t.equal(resolve("foo %s", "marko"), "foo marko", "Single placeholder");
-		t.equal(resolve("foo %s %d", "marko", 12), "foo marko 12", "Two placeholders");
-		t.equal(
-			resolve("foo %s %d", "marko", 12, "elo"), "foo marko 12",
-			"Two placeholders with arguments overflow and no rest handling defined"
-		);
-		t.equal(
-			resolve("foo %s %d", "marko"), "foo marko %d", "Two placeholders with argument missing"
-		);
-		t.equal(resolve("foo %2$s %1$d", 12, "bar"), "foo bar 12", "Parameters swap");
-		t.equal(resolve("foo %*d", 10, 12), "foo 12", "Dynamic width");
-		t.equal(resolve("foo %.*d", 10, 12), "foo 12", "Dynamic precision");
-		t.equal(
-			resolve("foo %2$s %2$d", 12, "bar"),
-			"foo [invalid placeholder parameters] [invalid placeholder parameters]",
-			"Invalid parameters setup"
-		);
+		t.equal(resolve("foo %s %d", "marko", 12), "foo marko 12", "Placeholders");
 		t.equal(resolve(12, 13), "", "Non-string first argument without rest");
 
 		resolve = getResolver({
@@ -40,17 +24,12 @@ test("Should", function (t) {
 			resolve("foo %s", "marko", 12, "elo"), "foo marko 12-elo",
 			"Arguments overflow with rest handling"
 		);
-		t.equal(
-			resolve("foo %*s", 10, "marko", 12, "elo"), "foo marko 12-elo",
-			"Arguments overflow with rest handling and width shift"
-		);
-		t.equal(resolve("foo %x", "elo"), "foo %x", "Placeholder content on unknown type");
 		t.equal(resolve(12, 13), "12-13", "Non-string first argument with rest");
 		t.end();
 	});
 	var resolve = getResolver({ d: modifierD, literal: function (str) { return str + "foo"; } });
-	t.equal(resolve("mar %d ko", 12), "mar foo12 kofoo", "Support 'literal' modifier");
-	t.equal(resolve("marlo"), "marlofoo", "Support 'literal' modifier with no placeholder");
+	t.equal(resolve("mar %d ko", 12), "mar foo12 kofoo", "Shouold support 'literal' modifier");
+	t.equal(resolve("marlo"), "marlofoo", "Shoud support 'literal' modifier with no placeholder");
 
 	t.throws(
 		function () { getResolver({ foo: modifierD }); }, TypeError, "Reject invalid modifiers map"

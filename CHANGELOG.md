@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/medikoo/sprintf-kit/compare/v1.4.0...v1.5.0) (2018-09-28)
+
+
+### Features
+
+*  getResolver utility ([516656c](https://github.com/medikoo/sprintf-kit/commit/516656c))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/medikoo/sprintf-kit/compare/v1.3.0...v1.4.0) (2018-08-03)
 

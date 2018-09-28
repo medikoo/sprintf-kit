@@ -1,6 +1,6 @@
 {
   "name": "sprintf-kit",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "sprintf parser and basic formatter",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [

@@ -1,3 +1,5 @@
+// For given modifiers returns parts resolver for given format arguments
+
 "use strict";
 
 var ensureObject        = require("es5-ext/object/valid-object")

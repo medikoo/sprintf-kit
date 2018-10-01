@@ -1,3 +1,5 @@
+// format string parser
+
 "use strict";
 
 var aFrom        = require("es5-ext/array/from")
@@ -186,9 +188,7 @@ var checkParameterIndexing = function () {
 	if (placeholderParameters.length !== placeholders.length) return false;
 	var currentParameter = 0;
 	return placeholderParameters
-		.sort(function (parameter1, parameter2) {
-			return parameter1 - parameter2;
-		})
+		.sort(function (parameter1, parameter2) { return parameter1 - parameter2; })
 		.every(function (parameter) {
 			if (parameter !== currentParameter && parameter !== currentParameter + 1) return false;
 			currentParameter = parameter;

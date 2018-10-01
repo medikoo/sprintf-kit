@@ -61,8 +61,12 @@ module.exports = function (modifiers) {
 		var data = parse(format);
 		var args = slice.call(arguments, 1);
 
-		result = { literals: data.literals };
-		if (data.literals.length <= 1) {
+		var literals = data.literals;
+		if (modifiers.literal) {
+			literals = literals.map(function (literal) { return modifiers.literal(literal); });
+		}
+		result = { literals: literals };
+		if (literals.length <= 1) {
 			result.substitutions = [];
 			result.rest = resolveRest(modifiers.rest, data, args, 0);
 			return result;

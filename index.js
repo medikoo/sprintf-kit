@@ -9,9 +9,6 @@ module.exports = function (modifiers) {
 		var data = resolve.apply(null, arguments);
 		var literals = data.literals;
 		var substitutions = data.substitutions;
-		if (modifiers.literal) {
-			literals = literals.map(function (literal) { return modifiers.literal(literal); });
-		}
 		var resolvedString = literals.length
 			? literals.reduce(function (resolved, literal, index) {
 					return resolved + substitutions[index - 1] + literal;

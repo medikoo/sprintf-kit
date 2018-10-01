@@ -3,7 +3,7 @@
 var test        = require("tape")
   , modifierD   = require("../modifiers/d")
   , modifierS   = require("../modifiers/s")
-  , getResolver = require("../get-resolver");
+  , getResolver = require("../get-parts-resolver");
 
 test("getResolver", function (t) {
 	t.test("Should resolve", function (t) {

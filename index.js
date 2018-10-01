@@ -1,9 +1,9 @@
 "use strict";
 
-var getResolver = require("./get-resolver");
+var getPartsResolver = require("./get-parts-resolver");
 
 module.exports = function (modifiers) {
-	var resolve = getResolver(modifiers);
+	var resolve = getPartsResolver(modifiers);
 
 	return function (formatIgnored/*, ...params*/) {
 		var data = resolve.apply(null, arguments);

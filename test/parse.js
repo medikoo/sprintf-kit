@@ -143,7 +143,7 @@ test("parse", function (t) {
 			parse("foo %+d"),
 			{
 				literals: ["foo ", ""],
-				placeholders: [{ flags: ["+"], type: "d", content: "%+d" }],
+				placeholders: [{ flags: "+", type: "d", content: "%+d" }],
 				isParameterIndexingValid: true
 			},
 			"Single flag in placeholder"
@@ -153,7 +153,7 @@ test("parse", function (t) {
 			parse("foo %0d"),
 			{
 				literals: ["foo ", ""],
-				placeholders: [{ flags: ["0"], type: "d", content: "%0d" }],
+				placeholders: [{ flags: "0", type: "d", content: "%0d" }],
 				isParameterIndexingValid: true
 			},
 			"Single 0 flag in placeholder"
@@ -163,7 +163,7 @@ test("parse", function (t) {
 			parse("foo %0+d"),
 			{
 				literals: ["foo ", ""],
-				placeholders: [{ flags: ["0", "+"], type: "d", content: "%0+d" }],
+				placeholders: [{ flags: "0+", type: "d", content: "%0+d" }],
 				isParameterIndexingValid: true
 			},
 			"Multiple flags in placeholder"
@@ -258,7 +258,7 @@ test("parse", function (t) {
 				placeholders: [
 					{
 						parameter: 23,
-						flags: ["+", " "],
+						flags: "+ ",
 						width: 30,
 						precision: 30,
 						length: "hh",
@@ -278,7 +278,7 @@ test("parse", function (t) {
 				placeholders: [
 					{
 						parameter: 1,
-						flags: [" "],
+						flags: " ",
 						width: 3,
 						precision: 3,
 						length: "h",

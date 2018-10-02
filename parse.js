@@ -72,7 +72,7 @@ var states = {
 		if (hasOwnProperty.call(flagChars, char)) {
 			++index;
 		} else {
-			placeholder.flags = aFrom(formatString.slice(currentTokenStart, index));
+			placeholder.flags = formatString.slice(currentTokenStart, index);
 			state = "widthStart";
 		}
 	},

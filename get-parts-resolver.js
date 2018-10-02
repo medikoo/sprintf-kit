@@ -34,13 +34,22 @@ var resolveResultWithPlaceholders = function (modifiers, data, args, result) {
 		var parameter = index + 1;
 		if (placeholder.width === "*") ++extraPlaceholderArgsLength;
 		if (placeholder.precision === "*") ++extraPlaceholderArgsLength;
-		if (!isParameterIndexingValid) return "[invalid placeholder parameters]";
-		if (!modifiers[placeholder.type]) return placeholder.content;
+		if (!isParameterIndexingValid) {
+			return { value: "[invalid placeholder parameters]", placeholder: placeholder };
+		}
+		if (!modifiers[placeholder.type]) {
+			return { value: placeholder.content, placeholder: placeholder };
+		}
 		if (placeholder.parameter) parameter = placeholder.parameter;
-		if (parameter > args.length) return placeholder.content;
+		if (parameter > args.length) {
+			return { value: placeholder.content, placeholder: placeholder };
+		}
 		var placeholderIndex = parameter + extraPlaceholderArgsLength - 1;
 		var arg = args[placeholderIndex];
-		return modifiers[placeholder.type](arg, placeholder, placeholderIndex, args);
+		return {
+			value: modifiers[placeholder.type](arg, placeholder, placeholderIndex, args),
+			placeholder: placeholder
+		};
 	});
 	result.rest = resolveRest(
 		modifiers.rest, data, args, data.placeholders.length + extraPlaceholderArgsLength

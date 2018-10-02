@@ -88,9 +88,9 @@ format = require("sprintf-kit")({
 });
 ```
 
-#### Resolver generator
+#### Parts resolver generator
 
-Resolver returns resolved data in form of tokens, which maybe helpful if additional programmatical processing is needed
+Resolver returns resolved data in form of object parts, which maybe helpful if additional programmatical processing is needed
 
 ```javascript
 // Configure format function that resolves 's' and 'd' modifiers
@@ -102,7 +102,11 @@ let resolve = require("sprintf-kit/get-resolver")({
 resolve("Some %s with %d count %x boo", "foo", 12, "ignored");
 // {
 //   literals: ["Some ", " with ", " count ", " boo"],
-//   substitutions: ["foo", "12", "%x"],
+//   substitutions: [
+//     { value: "foo", placeholder: { type: "s", content: "%s" } },
+//     { value: "12", placeholder:  { type: "d", content: "%d" } },
+//     { value: "%x", placeholder: { type: "x", content: "%x" }
+//   ],
 //   rest: null
 // }
 
@@ -115,7 +119,10 @@ resolve = require("sprintf-kit/get-resolver")({
 resolve("Some %s with %d count", "foo", 12, "rest", "args");
 // {
 //   literals: ["Some ", " with ", " count"],
-//   substitutions: ["foo", "12"],
+//   substitutions: [
+//     { value: "foo", placeholder: { type: "s", content: "%s" } },
+//     { value: "12", placeholder:  { type: "d", content: "%d" } }
+//   ],
 //   rest: " rest args"
 // }
 ```

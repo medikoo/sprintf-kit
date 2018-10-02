@@ -7,13 +7,17 @@ test("formatParts", function (t) {
 	t.test("Should resolve", function (t) {
 		t.equal(formatParts({ literals: ["foo raz"], substitutions: [], rest: null }), "foo raz");
 		t.equal(
-			formatParts({ literals: ["foo ", ""], substitutions: ["marko"], rest: null }),
+			formatParts({
+				literals: ["foo ", ""],
+				substitutions: [{ value: "marko" }],
+				rest: null
+			}),
 			"foo marko", "Single placeholder"
 		);
 		t.equal(
 			formatParts({
 				literals: ["foo ", " ", ""],
-				substitutions: ["marko", "12"],
+				substitutions: [{ value: "marko" }, { value: "12" }],
 				rest: null
 			}),
 			"foo marko 12", "Two placeholders"
@@ -24,7 +28,11 @@ test("formatParts", function (t) {
 		);
 
 		t.equal(
-			formatParts({ literals: ["foo ", ""], substitutions: ["marko"], rest: " 12-elo" }),
+			formatParts({
+				literals: ["foo ", ""],
+				substitutions: [{ value: "marko" }],
+				rest: " 12-elo"
+			}),
 			"foo marko 12-elo", "with rest handling"
 		);
 		t.equal(

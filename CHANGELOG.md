@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/medikoo/sprintf-kit/compare/v1.5.0...v2.0.0) (2018-10-02)
+
+
+### Features
+
+* for simplicity represent `flags` as string ([299ffa3](https://github.com/medikoo/sprintf-kit/commit/299ffa3))
+* in parts expose substitutions values with meta data ([c06a929](https://github.com/medikoo/sprintf-kit/commit/c06a929))
+* rename getResolver into getPartsResolver ([6270025](https://github.com/medikoo/sprintf-kit/commit/6270025))
+* seclude formatParts util ([3b40e25](https://github.com/medikoo/sprintf-kit/commit/3b40e25))
+* support literal modifier resolution within resolver ([8f5353e](https://github.com/medikoo/sprintf-kit/commit/8f5353e))
+
+
+### BREAKING CHANGES
+
+* parts.substitutions instead of array of
+substitution values now exposes array of
+meta data where substitutionMeta.value
+ exposes substitution value, and substitutionMeta.placeholder exposes
+placeholder meta data
+* Parse exposes `flags` now as string and not array, so e.g. `["+", " "]`
+is now exposed as "+ "
+* get-resolver.js module is renamed to get-parts-resolver.js
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/medikoo/sprintf-kit/compare/v1.4.0...v1.5.0) (2018-09-28)
 

@@ -3,7 +3,7 @@
 var test        = require("tape")
   , formatParts = require("../format-parts");
 
-test("getResolver", function (t) {
+test("formatParts", function (t) {
 	t.test("Should resolve", function (t) {
 		t.equal(formatParts({ literals: ["foo raz"], substitutions: [], rest: null }), "foo raz");
 		t.equal(

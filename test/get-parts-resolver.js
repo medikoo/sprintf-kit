@@ -5,7 +5,7 @@ var test        = require("tape")
   , modifierS   = require("../modifiers/s")
   , getResolver = require("../get-parts-resolver");
 
-test("getResolver", function (t) {
+test("getPartsResolver", function (t) {
 	t.test("Should resolve", function (t) {
 		// eslint-disable-next-line id-length
 		var resolve = getResolver({ d: modifierD, s: modifierS });

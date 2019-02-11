@@ -292,4 +292,5 @@ test("parse", function (t) {
 		);
 		t.end();
 	});
+	t.end();
 });

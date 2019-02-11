@@ -20,7 +20,7 @@
   "devDependencies": {
     "browserstack-tape-runner": "3",
     "eslint": "^5.13",
-    "eslint-config-medikoo-es5": "^1.7.2",
+    "eslint-config-medikoo-es5": "2",
     "essentials": "1",
     "nyc": "^13.2",
     "tape": "^4.10",

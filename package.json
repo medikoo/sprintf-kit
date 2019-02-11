@@ -18,7 +18,7 @@
     "es5-ext": "^0.10.47"
   },
   "devDependencies": {
-    "browserstack-tape-runner": "2",
+    "browserstack-tape-runner": "3",
     "eslint": "^5.13",
     "eslint-config-medikoo-es5": "^1.7.2",
     "istanbul": "^0.4.5",

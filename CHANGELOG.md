@@ -1,6 +1,12 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [2.0.1](https://github.com/medikoo/sprintf-kit/compare/v2.0.0...v2.0.1) (2021-06-24)
+
+### Bug Fixes
+
+-   Fix support for `%%` escape ([324777a](https://github.com/medikoo/sprintf-kit/commit/324777a42ef7b2f6b21c22ae2d27e5089d7fdcc1))
 
 <a name="2.0.0"></a>
 

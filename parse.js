@@ -12,7 +12,8 @@ var digitChars = primitiveSet.apply(null, aFrom("0123456789"))
   , flagChars = primitiveSet.apply(null, aFrom("#0-+ 'I"))
   , lengthChars = primitiveSet.apply(null, aFrom("hlLzjt"));
 
-var formatString, char, index, state, literalStart, literals, placeholders;
+var formatString, char, index, state, literalStart, literals, placeholders
+  , afterEscapeLiteralIndexes;
 var literalEnd, placeholder, currentTokenStart;
 
 var states = {
@@ -35,11 +36,10 @@ var states = {
 				state = "parameter";
 			}
 		} else if (char === "%") {
-			placeholder.type = "%";
-			literals.push(formatString.slice(literalStart, literalEnd));
+			afterEscapeLiteralIndexes.push(
+				literals.push(formatString.slice(literalStart, literalEnd) + "%")
+			);
 			literalStart = ++index;
-			placeholder.content = formatString.slice(literalEnd, index);
-			placeholders.push(placeholder);
 			state = "literal";
 		} else {
 			state = "flagsStart";
@@ -204,6 +204,7 @@ module.exports = function (input) {
 	literalStart = 0;
 	literals = [];
 	placeholders = [];
+	afterEscapeLiteralIndexes = [];
 	var length = input.length;
 
 	// eslint-disable-next-line no-unmodified-loop-condition
@@ -212,6 +213,18 @@ module.exports = function (input) {
 		states[state]();
 	}
 	literals.push(formatString.slice(literalStart, length));
+
+	if (afterEscapeLiteralIndexes.length) {
+		for (
+			var i = afterEscapeLiteralIndexes.length - 1, literalIndex;
+			(literalIndex = afterEscapeLiteralIndexes[i]);
+			--i
+		) {
+			literals[literalIndex - 1] += literals[literalIndex];
+			delete literals[literalIndex];
+		}
+		literals = literals.filter(function (literal) { return typeof literal === "string"; });
+	}
 
 	return {
 		literals: literals,

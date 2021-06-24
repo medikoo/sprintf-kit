@@ -27,7 +27,7 @@
     "lint-staged": "^11.0.0",
     "nyc": "^13.2",
     "prettier-elastic": "^2.2.1",
-    "tape": "^4.10",
+    "tape": "^5.2.2",
     "tape-index": "^3.0.1"
   },
   "husky": {

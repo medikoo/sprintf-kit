@@ -95,7 +95,9 @@ test("parse", function (t) {
 			parse("%s foo %d"),
 			{
 				literals: ["", " foo ", ""],
-				placeholders: [{ type: "s", content: "%s" }, { type: "d", content: "%d" }],
+				placeholders: [
+					{ type: "s", content: "%s" }, { type: "d", content: "%d" }
+				],
 				isParameterIndexingValid: true
 			},
 			"Multiple simple placeholders at the edge"
@@ -105,7 +107,9 @@ test("parse", function (t) {
 			parse("foo %s bar %d zed"),
 			{
 				literals: ["foo ", " bar ", " zed"],
-				placeholders: [{ type: "s", content: "%s" }, { type: "d", content: "%d" }],
+				placeholders: [
+					{ type: "s", content: "%s" }, { type: "d", content: "%d" }
+				],
 				isParameterIndexingValid: true
 			},
 			"Multiple simple placeholders in a middle"

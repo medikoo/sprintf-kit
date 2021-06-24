@@ -15,20 +15,20 @@
     "url": "git://github.com/medikoo/sprintf-kit.git"
   },
   "dependencies": {
-    "es5-ext": "^0.10.47"
+    "es5-ext": "^0.10.53"
   },
   "devDependencies": {
-    "browserstack-tape-runner": "3",
+    "browserstack-tape-runner": "^3.0.0",
     "eslint": "^7.29.0",
     "eslint-config-medikoo": "^4.0.0",
-    "essentials": "1",
-    "git-list-updated": "^1.1.2",
+    "essentials": "^1.1.1",
+    "git-list-updated": "^1.2.1",
     "husky": "^4.3.8",
     "lint-staged": "^11.0.0",
     "nyc": "^15.1.0",
     "prettier-elastic": "^2.2.1",
     "tape": "^5.2.2",
-    "tape-index": "^3.0.1"
+    "tape-index": "^3.1.0"
   },
   "husky": {
     "hooks": {

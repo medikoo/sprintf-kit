@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/medikoo/sprintf-kit/compare/v2.0.1...v2.0.2) (2024-05-30)
+
+### Maintenance Improvements
+
+- Prettify ([b74d6a7](https://github.com/medikoo/sprintf-kit/commit/b74d6a7ca16025bb576a05d97e6c83152863c8ac))
+
 ### [2.0.1](https://github.com/medikoo/sprintf-kit/compare/v2.0.0...v2.0.1) (2021-06-24)
 
 ### Bug Fixes

@@ -8,9 +8,9 @@
 
 ## sprintf parser and basic formatter
 
--   Full [printf format parser](#parser)
--   Basic (ECMAScript level) modifier [resolvers](#preconfigured-modifiers)
--   Format function [generator](#format-function-generator).
+- Full [printf format parser](#parser)
+- Basic (ECMAScript level) modifier [resolvers](#preconfigured-modifiers)
+- Format function [generator](#format-function-generator).
 
 ### Installation
 
@@ -42,26 +42,26 @@ const data = parse("Some %s with %d count");
 
 `data` spec:
 
--   `literals` - Surrounding string literals
--   `placeholders` - Meta data of parsed placholders.
-    Placeholder properties map (refer to [spec](https://en.wikipedia.org/wiki/Printf_format_string) for explanation of each property)
-    -   `parameter` - (optional) parameter setting (e.g. `1`)
-    -   `flags` - (optional) array of flags (e.g. `["0", "-"]`)
-    -   `width` - (optional) width (e.g. `4` or `"*"` if dynamic)
-    -   `precision` - (optional) precision (e.g. `4` or `"*"` if dynamic)
-    -   `length` - (optional) length (e.g. `"z"`)
-    -   `type` - Modifier type (e.g. `"s"` or `"d"`)
-    -   `content` - Full string representation of placeholder (e.g. `"%s"`)
--   `isParameterIndexingValid` - Whether parameter indexing is valid across all placeholders.
-    e.g. if no placeholders come with parameters it'll be true. If some but not all of them will come with parameters, it'll be false (if used, then all placeholders should use them).
+- `literals` - Surrounding string literals
+- `placeholders` - Meta data of parsed placholders.
+  Placeholder properties map (refer to [spec](https://en.wikipedia.org/wiki/Printf_format_string) for explanation of each property)
+  - `parameter` - (optional) parameter setting (e.g. `1`)
+  - `flags` - (optional) array of flags (e.g. `["0", "-"]`)
+  - `width` - (optional) width (e.g. `4` or `"*"` if dynamic)
+  - `precision` - (optional) precision (e.g. `4` or `"*"` if dynamic)
+  - `length` - (optional) length (e.g. `"z"`)
+  - `type` - Modifier type (e.g. `"s"` or `"d"`)
+  - `content` - Full string representation of placeholder (e.g. `"%s"`)
+- `isParameterIndexingValid` - Whether parameter indexing is valid across all placeholders.
+  e.g. if no placeholders come with parameters it'll be true. If some but not all of them will come with parameters, it'll be false (if used, then all placeholders should use them).
 
 #### Format function generator
 
 ```javascript
 // Configure format function that resolves 's' and 'd' modifiers
 let format = require("sprintf-kit")({
-    d: require("sprintf-kit/modifiers/d"),
-    s: require("sprintf-kit/modifiers/s")
+  d: require("sprintf-kit/modifiers/d"),
+  s: require("sprintf-kit/modifiers/s")
 });
 
 format("Some %s with %d count %x boo", "foo", 12, "ignored"); // Some foo with 12 count %x boo
@@ -69,9 +69,9 @@ format("Some %s with %d count %x boo", "foo", 12, "ignored"); // Some foo with 1
 // Special `rest` formater can be used to handle leftover arguments
 
 format = require("sprintf-kit")({
-    d: require("sprintf-kit/modifiers/d"),
-    s: require("sprintf-kit/modifiers/s"),
-    rest: args => " " + args.join(" ")
+  d: require("sprintf-kit/modifiers/d"),
+  s: require("sprintf-kit/modifiers/s"),
+  rest: args => " " + args.join(" ")
 });
 
 format("Some %s with %d count", "foo", 12, "rest", "args"); // Some foo with 12 count rest args
@@ -82,9 +82,9 @@ format("Some %s with %d count", "foo", 12, "rest", "args"); // Some foo with 12 
 const clc = require("cli-color");
 
 format = require("sprintf-kit")({
-    d: require("sprintf-kit/modifiers/d"),
-    s: require("sprintf-kit/modifiers/s"),
-    literal: literal => clc.red(literal)
+  d: require("sprintf-kit/modifiers/d"),
+  s: require("sprintf-kit/modifiers/s"),
+  literal: literal => clc.red(literal)
 });
 ```
 
@@ -95,8 +95,8 @@ Resolver returns resolved data in form of object parts, which maybe helpful if a
 ```javascript
 // Configure format function that resolves 's' and 'd' modifiers
 let resolve = require("sprintf-kit/get-resolver")({
-    d: require("sprintf-kit/modifiers/d"),
-    s: require("sprintf-kit/modifiers/s")
+  d: require("sprintf-kit/modifiers/d"),
+  s: require("sprintf-kit/modifiers/s")
 });
 
 resolve("Some %s with %d count %x boo", "foo", 12, "ignored");
@@ -111,9 +111,9 @@ resolve("Some %s with %d count %x boo", "foo", 12, "ignored");
 // }
 
 resolve = require("sprintf-kit/get-resolver")({
-    d: require("sprintf-kit/modifiers/d"),
-    s: require("sprintf-kit/modifiers/s"),
-    rest: args => " " + args.join(" ")
+  d: require("sprintf-kit/modifiers/d"),
+  s: require("sprintf-kit/modifiers/s"),
+  rest: args => " " + args.join(" ")
 });
 
 resolve("Some %s with %d count", "foo", 12, "rest", "args");
@@ -135,11 +135,11 @@ Modifiers can be found at `sprintf-kit/modifiers` folder.
 
 Preconfigured modifiers
 
--   `d` - Number
--   `f` - Floating point value
--   `i` - Integer
--   `j` - JSON
--   `s` - String
+- `d` - Number
+- `f` - Floating point value
+- `i` - Integer
+- `j` - JSON
+- `s` - String
 
 Every modifier is exception safe, in case of approaching invalid value, adequate error message token is displayed in place of placeholder
 

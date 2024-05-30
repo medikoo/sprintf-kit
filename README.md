@@ -153,6 +153,10 @@ Project cross-browser compatibility supported by:
 
 <a href="https://browserstack.com"><img src="https://bstacksupport.zendesk.com/attachments/token/Pj5uf2x5GU9BvWErqAr51Jh2R/?name=browserstack-logo-600x315.png" height="150" /></a>
 
+## Security contact information
+
+To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
+
 [nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/sprintf-kit/branches/master/shields_badge.svg
 [nix-build-url]: https://semaphoreci.com/medikoo-org/sprintf-kit
 [win-build-image]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61?svg=true

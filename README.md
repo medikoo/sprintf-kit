@@ -1,7 +1,5 @@
-[![*nix build status][nix-build-image]][nix-build-url]
-[![Windows build status][win-build-image]][win-build-url]
+[![Build status][build-image]][build-url]
 [![Tests coverage][cov-image]][cov-url]
-![Transpilation status][transpilation-image]
 [![npm version][npm-image]][npm-url]
 
 # sprintf-kit
@@ -157,12 +155,9 @@ Project cross-browser compatibility supported by:
 
 To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
-[nix-build-image]: https://semaphoreci.com/api/v1/medikoo-org/sprintf-kit/branches/master/shields_badge.svg
-[nix-build-url]: https://semaphoreci.com/medikoo-org/sprintf-kit
-[win-build-image]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61?svg=true
-[win-build-url]: https://ci.appveyor.com/api/projects/status/o3dnowm0ftn21u61
+[build-image]: https://github.com/medikoo/sprintf-kit/workflows/Integrate/badge.svg
+[build-url]: https://github.com/medikoo/sprintf-kit/actions?query=workflow%3AIntegrate
 [cov-image]: https://img.shields.io/codecov/c/github/medikoo/sprintf-kit.svg
 [cov-url]: https://codecov.io/gh/medikoo/sprintf-kit
-[transpilation-image]: https://img.shields.io/badge/transpilation-free-brightgreen.svg
 [npm-image]: https://img.shields.io/npm/v/sprintf-kit.svg
 [npm-url]: https://www.npmjs.com/package/sprintf-kit

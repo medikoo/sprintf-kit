@@ -24,7 +24,7 @@
 		"essentials": "^1.1.1",
 		"git-list-updated": "^1.2.1",
 		"husky": "^4.3.8",
-		"lint-staged": "^11.0.0",
+		"lint-staged": "^15.2.5",
 		"nyc": "^15.1.0",
 		"prettier-elastic": "^2.2.1",
 		"tape": "^5.2.2",
